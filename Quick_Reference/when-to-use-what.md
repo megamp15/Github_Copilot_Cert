@@ -11,8 +11,12 @@
 | Generate tests            | **Smart action** or `/tests`        | Smart action fastest, /tests for comprehensive |
 | Setup test framework      | **Chat** → `/setupTests`            | Configures framework automatically             |
 | Fix failing test          | **Test Explorer sparkle icon**      | One-click fix suggestions                      |
+| Multi-file refactoring    | **Agent Mode** (IDE)                | Autonomous local edits                         |
+| Issue-to-PR workflow      | **Coding Agent** (GitHub)           | Creates PRs from assigned issues               |
+| Connect external tools    | **MCP Server**                      | Access GitHub data, APIs, enterprise tools     |
 | CLI help                  | **gh copilot suggest**              | Terminal-specific suggestions                  |
 | PR review                 | **GitHub.com Copilot**              | Web-based PR analysis                          |
+| Automate reviews          | **Copilot + Rulesets**              | Auto-assign to all PRs                         |
 | Project-wide question     | **@workspace**                      | Understands entire codebase                    |
 | Runbook/playbook/workflow | **Copilot Space**                   | Curated context, repeatable answers            |
 
@@ -59,11 +63,15 @@
 | Inline suggestions     | 0 PRUs   | Always!                               |
 | Standard chat (GPT-4o) | 1 PRU    | Most tasks                            |
 | Premium models (o1)    | 2 PRUs   | Complex algorithms, security analysis |
+| Agent Mode (IDE)       | 2-5 PRUs | Multi-file workflows                  |
+| Coding Agent           | 1 PRU    | Per model request                     |
 | PR summaries           | 1-2 PRUs | When needed for reviews               |
 | Code review            | 1-3 PRUs | Important changes                     |
 | @workspace queries     | 1-5 PRUs | When project context needed           |
 
-**Tip**: Use inline suggestions and standard chat for routine work. Save premium models and workspace queries for complex tasks.
+**Tip**: Use inline suggestions and standard chat for routine work. Save premium models, Agent Mode, and workspace queries for complex tasks.
+
+📋 **See**: [PRU Optimization Guide](pru-optimization-guide.md)
 
 ## 🚀 Speed vs Quality Trade-offs
 
@@ -73,3 +81,38 @@
 | ⚡⚡ Fast      | Better  | Targeted help, quick fixes       | Inline chat + slash commands |
 | ⚡ Slower      | Best    | Complex problems, learning       | Chat with premium models     |
 | 🐌 Slowest     | Best    | Project generation, architecture | @workspace /new              |
+
+## 🤖 Agent Mode vs Coding Agent
+
+**Confused which to use?** [See comparison guide](agent-mode-vs-coding-agent.md)
+
+### Quick Decision
+
+| Scenario                  | Use This                    |
+| ------------------------- | --------------------------- |
+| **Local multi-file work** | Agent Mode (Chat in IDE)    |
+| **Need PR for team**      | Coding Agent (assign issue) |
+| **Quick local changes**   | Agent Mode                  |
+| **Issue from GitHub**     | Coding Agent                |
+
+## 🔌 MCP Server Use Cases
+
+| Task                        | How MCP Helps               |
+| --------------------------- | --------------------------- |
+| **Create issues from code** | Direct GitHub integration   |
+| **Rank PRs**                | Automated prioritization    |
+| **Analyze repositories**    | Semantic code search        |
+| **Cross-platform work**     | Web, mobile, desktop access |
+
+📋 **See**: [MCP Server Quick Setup](mcp-server-quick-setup.md)
+
+## 📝 Code Review Workflows
+
+| Scenario                     | Solution                                    |
+| ---------------------------- | ------------------------------------------- |
+| **Review all PRs**           | Set up automatic reviews (account/repo/org) |
+| **Catch issues before PR**   | Local IDE review                            |
+| **Custom team standards**    | `.github/copilot-instructions.md`           |
+| **Security-sensitive repos** | Rulesets + Copilot reviews                  |
+
+📋 **See**: [Code Review Quick Guide](code-review-quick-guide.md)
